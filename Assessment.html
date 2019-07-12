@@ -1,0 +1,112 @@
+<html>
+    <head>
+        <title>
+            Time Table
+        </title> 
+        <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet"> 
+        <script type="text/javascript" src="assessment.js" ></script> 
+        <style> 
+        fieldset {
+            background: linear-gradient(to bottom right, #339966 28%, #0099cc 100%);
+        margin-left: 500px;
+        margin-right: 500px;
+        text-align: center; 
+        font-family: 'Montserrat', sans-serif;
+        box-shadow: 0 0 10px black;
+
+         } 
+         body {
+            background-image: linear-gradient(to top, #5ee7df 0%, #b490ca 100%);
+            box-shadow: 0 0 10px black; } 
+            
+            #sub {   box-shadow: 0 0 10px black;
+        /* background: radial-gradient(circle at 100%, #333, #333 50%, #eee 75%, #333 100%); */
+        background: linear-gradient(-20deg, #d558c8 0%, #24d292 100%);
+
+        font-family: 'Montserrat', sans-serif;
+        font-weight: bold;  
+
+    }  
+    input {  
+        box-shadow: 0 0 10px black;
+
+    }  
+    select {  
+        box-shadow: 0 0 10px black;
+
+    }
+    
+    </style>
+    </head> 
+    <body> 
+        <div>
+        <fieldset id='field'> 
+            <legend> <h3> Add Trainer </h3> </legend>
+            <input type="text" placeholder="Enter Trainer Name " id="tName" \> <br> <br>
+            <input type="text" placeholder="Enter Trainer Email " id="tEmail" \> <br> <br>
+            <b>Choose Skill</b> <br>
+            <input class="checkbox" type="checkbox" name="inp" value="English"> English<br>
+            <input class="checkbox" type="checkbox" name="inp" value="Maths"> Maths<br>
+            <input class="checkbox" type="checkbox" name="inp" value="Science" > Science  <br>
+            <input class="checkbox" type="checkbox" name="inp" value="CS" > CS <br>
+            <input class="checkbox" type="checkbox" name="inp" value="Physics" > Physics  <br>
+            <input  type="button" value="Submit" id="sub" onclick="saveTrainer()">
+    
+        </fieldset>  
+        <fieldset id="field2">
+            <legend> <h3>  Create Timetable </h3>  </legend> 
+            <b>Choose Class: </b> 
+            <select id="class" class="" onchange="">
+                    <option value="">-select-</option>
+                    <option value="Class1">Class1</option> 
+                    <option value="Class2">Class2</option>
+            </select> <br> <br>
+            <b> Pick Slot:  </b>  
+            <select id="slot" class="" onchange="">
+                    <option value="">-select-</option>
+                    <option value="slot1">10-11</option> 
+                    <option value="slot2">11-12</option>
+                    <option value="slot3">Recess</option> 
+                    <option value="slot4">13-14</option>
+                    <option value="slot5">14-15</option> 
+                    <option value="slot6">15-16</option>
+            </select> <br> <br>
+            <b> Pick Subject:  </b> 
+            <select id="subject" class="" onclick="showTrainer()" onchange="">
+                    <option value="">-select-</option>
+                    <option value="English">English</option> 
+                    <option value="Maths">Maths</option>
+                    <option value="Science">Science</option> 
+                    <option value="CS">CS</option>
+                    <option value="Physics">Physics</option> 
+
+            </select> <br>  <br> 
+            <b> Select Trainer: </b>   
+            <select id="trainer" class="" onchange=""> 
+                    <option value="">-select-</option>
+            
+            </select> <br> <br>
+            <input  type="button" id="sub" value="Save" onclick="saveTrainerToClass()"> <br> <br>
+
+
+            <!-- <input  type="button" id="sub" value="Create Time Table" onclick="showTrainer()"> -->
+            
+        </fieldset> 
+         
+        <fieldset >
+                <legend> <h3> Show Timetable  </h3>  </legend> 
+                <b> Choose Class: </b> 
+                <select id="classTime" class="" onclick="createTable()">
+                        <option value="">-select-</option>
+                        <option value="Class1">Class1</option> 
+                        <option value="Class2">Class2</option>
+                </select> <br> <br>
+                <input  type="button" id="sub" value="Show Timetable" onclick="createTable()"> <br> <br>
+        </FIeldset>
+    </div>
+    <div id="tbls">
+
+    </div>
+    </body>
+</html>
+
